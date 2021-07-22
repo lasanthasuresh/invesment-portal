@@ -1,0 +1,6 @@
+<app-company-card
+        *ngFor="let company of companies$ | async"
+        [company]="company"
+        (click)="gotoDetails(company)"
+>
+</app-company-card>

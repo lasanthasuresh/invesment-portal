@@ -1,0 +1,121 @@
+<ng-container *ngIf="company">
+    <div class="row">
+        <div class="col-6 col-md-3">
+            <div class="text-muted"><small>Industry</small></div>
+            <div class="">{{company.profile.industry}}</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="text-muted"><small>Sector</small></div>
+            <div class="">{{company.profile.sector}}</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="text-muted"><small>Employees</small></div>
+            <div class="">{{company.profile.employee_count}}</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="text-muted"><small>Equity Type</small></div>
+            <div class="">{{company.profile.equity_type}}</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="text-justify">{{company.profile.description}}</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row mb-2">
+        <div class="col-12">
+            <div class="h6">Contact Details</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="row">
+                <div class="col-1">
+                    <i class="bi bi-geo-alt-fill text-muted"></i>
+                </div>
+                <div class="col-3">
+                    <div class="text-muted"><small>Address</small></div>
+                </div>
+                <div class="col-8">
+                    <div>{{company.profile.address}}</div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-1">
+                    <i class="bi bi-telephone-fill text-muted"></i>
+                </div>
+                <div class="col-3">
+                    <div class="text-muted"><small>Phone</small></div>
+                </div>
+                <div class="col-8">
+                    <div>{{company.profile.phone}}</div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-1">
+                    <i class="bi bi-printer-fill text-muted"></i>
+                </div>
+                <div class="col-3">
+                    <div class="text-muted"><small>Fax</small></div>
+                </div>
+                <div class="col-8">
+                    <div>{{company.profile.fax}}</div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-1">
+                    <i class="bi bi-envelope-fill text-muted"></i>
+                </div>
+                <div class="col-3">
+                    <div class="text-muted"><small>Email</small></div>
+                </div>
+                <div class="col-8">
+                    <div><a href="mailto:{{company.profile.email}}">{{company.profile.email}}</a></div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-1">
+                    <i class="bi bi-globe text-muted"></i>
+                </div>
+                <div class="col-3">
+                    <div class="text-muted"><small>Web</small></div>
+                </div>
+                <div class="col-8">
+                    <div><a href="{{company.profile.web}}">{{company.profile.web}}</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row mb-2">
+        <div class="col-12">
+            <div class="h6">Executives</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-borderless">
+                <tbody>
+                <tr *ngFor="let executive of company.profile.executives; index as i">
+                    <td class="pl-0"><b>{{ executive.name }}</b></td>
+                    <td class="pr-0">{{ executive.title }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</ng-container>

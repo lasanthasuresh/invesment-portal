@@ -1,0 +1,35 @@
+<div class="card-body row">
+    <div class="col-4 col-lg-3 logo">
+        <img [src]="company.logo" [alt]="company.name">
+    </div>
+
+    <div class="col-4 col-lg-3">
+        <div class="font-weight-bold">{{company.name}}</div>
+        <div><small>{{company.decision}}</small></div>
+    </div>
+
+<!--    <div class="col-4 col-lg-3">-->
+<!--        <div class="font-weight-bold change-color-from-diff" [ngStyle]="{'color': colorCode}">-->
+<!--            <i class="bi bi-arrow-up-circle-fill"></i>&nbsp;<span class="text-muted-">{{company.diff}}</span>-->
+<!--        </div>-->
+<!--        <div class="change-color-from-diff" [ngStyle]="{'color': colorCode}">-->
+<!--            {{company.diff_percentage | number:'.2'}}%-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="col-12 col-lg-3">-->
+<!--        <canvas-->
+<!--                *ngIf="chartData && chartLabels"-->
+<!--                baseChart-->
+<!--                width="400"-->
+<!--                height="80"-->
+<!--                [datasets]="chartData"-->
+<!--                [labels]="chartLabels"-->
+<!--                [options]="chartOptions"-->
+<!--                [colors]="chartColors"-->
+<!--                [legend]="false"-->
+<!--                [chartType]="'line'"-->
+<!--                [plugins]="[]">-->
+<!--        </canvas>-->
+<!--    </div>-->
+</div>

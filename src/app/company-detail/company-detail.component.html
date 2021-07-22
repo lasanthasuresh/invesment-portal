@@ -1,0 +1,26 @@
+<ng-container *ngIf="companyDetail$ | async as company">
+    <div class="d-flex align-items-center mb-2">
+        <button type="button" class="back-button btn btn-outline-light text-muted mr-2" (click)="goBack()">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <h1>{{company.name}}</h1>
+    </div>
+
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+        <li [ngbNavItem]="1">
+            <a ngbNavLink>Profile</a>
+            <ng-template ngbNavContent>
+                <app-company-profile [company]="company"></app-company-profile>
+            </ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+            <a ngbNavLink>Stats</a>
+            <ng-template ngbNavContent>
+                <app-company-stats></app-company-stats>
+            </ng-template>
+        </li>
+    </ul>
+
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</ng-container>

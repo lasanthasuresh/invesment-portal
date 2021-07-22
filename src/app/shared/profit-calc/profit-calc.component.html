@@ -1,0 +1,94 @@
+<!--<ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">-->
+<!--</ngb-datepicker>-->
+<!--<ng-template #t let-date let-focused="focused">-->
+<!--  <span class="custom-day"-->
+<!--        [class.focused]="focused"-->
+<!--        [class.range]="isRange(date)"-->
+<!--        [class.faded]="isHovered(date) || isInside(date)"-->
+<!--        (mouseenter)="hoveredDate = date"-->
+<!--        (mouseleave)="hoveredDate = null">-->
+<!--    {{ date.day }}-->
+<!--  </span>-->
+<!--</ng-template>-->
+
+<!--<div class=""-->
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card card-body text-center mt-5">
+            <h1 class="heading display-5 pb-3">Profit Calculator</h1>
+<!--            <form id="loan-form">-->
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">From</span>
+                        </div>
+                        <input type="date" [(ngModel)]="fromDate" class="form-control" >
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">To</span>
+                        </div>
+                        <input type="date" [(ngModel)]="toDate" class="form-control" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Amount</span>
+                        </div>
+                        <input type="number" [(ngModel)]="investedAmount" class="form-control" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="" value="Calculate" (click)="submitThis()" class="btn btn-dark btn-block">
+                </div>
+<!--            </form>-->
+            <!-- Loader  -->
+            <div id="loading">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="Loading Gif" style="height: 100px;" class="img-fluid">
+            </div>
+            <!-- Result  -->
+            <div id="results" class="pt-4">
+                <h5>Results:</h5>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Worth</span>
+                        </div>
+                        <input type="number" id="monthly-payment" class="form-control" name="" value="" [(ngModel)]="finalWorth" disabled>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Profit</span>
+                        </div>
+                        <input type="number" id="total-payment" class="form-control" name="" value="" [(ngModel)]="profit" disabled>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Gain Percentage</span>
+                        </div>
+                        <input type="number" id="total-interest" class="form-control" name="" value="" [(ngModel)]="profitPercentage" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<hr>
+
+<pre>From: {{ fromDate }} </pre>
+<pre>To: {{ toDate }} </pre>
